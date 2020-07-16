@@ -2,11 +2,18 @@
   "name": "typescript-library-starter",
   "version": "1.0.0",
   "description": "Typescript library starter kit",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm5/index.js",
+  "es2015": "dist/esm2015/index.js",
+  "typings": "dist/typings/index.d.ts",
   "scripts": {
-    "build": "npx webpack --config webpack.config.js",
-    "postbuild": "npm pack"
+    "prebuild": "rimraf dist",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm5": "tsc -p tsconfig.esm5.json",
+    "build:esm2015": "tsc -p tsconfig.esm2015.json",
+    "build:typings": "tsc -p tsconfig.typings.json",
+    "build": "npm run build:cjs && npm run build:esm5 && npm run build:esm2015 && npm run build:typings",
+    "post:build": "npm pack"
   },
   "files": [
     "dist"
@@ -20,7 +27,9 @@
   ],
   "author": "Skylake",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "ts-loader": "^7.0.5",
