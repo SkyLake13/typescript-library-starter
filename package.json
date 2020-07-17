@@ -12,7 +12,8 @@
     "build:esm5": "tsc -p tsconfig.esm5.json",
     "build:esm2015": "tsc -p tsconfig.esm2015.json",
     "build:typings": "tsc -p tsconfig.typings.json",
-    "build": "npm run build:cjs && npm run build:esm5 && npm run build:esm2015 && npm run build:typings",
+    "build": "npm run build:cjs && npm run build:esm5 && npm run build:esm2015 && npm run build:bundle && npm run build:typings",
+    "build:bundle": "npx webpack --config webpack.config.js",
     "pack": "npm pack"
   },
   "files": [
