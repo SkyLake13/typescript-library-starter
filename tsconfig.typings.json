@@ -2,7 +2,7 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "target": "ES2015",
-        "module": "ESNext",
+        "module": "ES2015",
         "declaration": true,                   /* Generates corresponding '.d.ts' file. */
         "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. */
         "declarationDir": "./dist/typings",
