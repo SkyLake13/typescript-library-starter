@@ -7,6 +7,8 @@
   "es2015": "dist/esm2015/index.js",
   "typings": "dist/typings/index.d.ts",
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
     "prebuild": "rimraf dist",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm5": "tsc -p tsconfig.esm5.json",
@@ -32,6 +34,9 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "jest": "^26.5.2",
+    "ts-jest": "^26.4.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.6",
     "webpack": "^5.0.0-beta.20",
